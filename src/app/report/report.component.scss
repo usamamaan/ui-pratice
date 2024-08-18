@@ -1,0 +1,14 @@
+:host ::ng-deep .p-paginator {
+  display: flex;
+  align-items: center;
+  justify-content: right !important;
+}
+
+:host ::ng-deep p-multiSelect {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+:host ::ng-deep .p-multiselect {
+  min-width: 230px !important;
+}

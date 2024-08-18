@@ -6,11 +6,13 @@ a {
   color: #ffffff;
 }
 nav {
-  height: 30px;
+  width: 100%;
 
   ul {
     display: flex;
     align-items: center;
     margin-top: 3px;
+    margin: 0;
+    padding: 10px;
   }
 }

@@ -3,20 +3,48 @@
   <div class="">
     <input class="form-control" type="text" placeholder="Name" />
   </div>
-  <mat-form-field appearance="outline">
+  <!-- <mat-form-field appearance="outline">
     <mat-select name="complaintype" [(ngModel)]="selectedComplain">
       <mat-option value="" selected>Select Complain</mat-option>
       <mat-option *ngFor="let complain of ComplainType" [value]="complain">
         {{ complain | titlecase }}
       </mat-option>
     </mat-select>
-  </mat-form-field>
+  </mat-form-field> -->
+  <p-dropdown
+    [options]="ComplainType"
+    [(ngModel)]="selectedComplain"
+    optionLabel="complainType"
+    [showClear]="true"
+    placeholder="Select a complain"
+    name="complainType"
+  >
+    <ng-template pTemplate="selectedItem">
+      <div class="country-item country-item-value" *ngIf="selectedComplain">
+        <div>{{ selectedComplain.name }}</div>
+      </div>
+    </ng-template>
+    <ng-template let-data pTemplate="item">
+      <div class="country-item">
+        <div>{{ data.name }}</div>
+      </div>
+    </ng-template>
+  </p-dropdown>
   <div class="">
     <textarea
       class="form-control"
-      type="text"
-      placeholder="Enter Description of complain"
+      placeholder="Enter Description"
+      [rows]="5"
+      [cols]="30"
+      pInputTextarea
+      [autoResize]="autoResize"
     ></textarea>
   </div>
-  <button type="button" mat-raised-button color="primary">Submit</button>
+  <p-calendar
+    [(ngModel)]="value"
+    [showButtonBar]="true"
+    placeholder="Enter current Date"
+  ></p-calendar>
+  <!-- <button type="button" mat-raised-button color="primary">Submit</button> -->
+  <button class="col-2" pButton type="button" label="Submit"></button>
 </form>
