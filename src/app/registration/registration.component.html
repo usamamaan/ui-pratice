@@ -1,16 +1,8 @@
 <form class="row">
-  <h1>Register your complains</h1>
+  <h1>Register your complains here</h1>
   <div class="">
     <input class="form-control" type="text" placeholder="Name" />
   </div>
-  <!-- <mat-form-field appearance="outline">
-    <mat-select name="complaintype" [(ngModel)]="selectedComplain">
-      <mat-option value="" selected>Select Complain</mat-option>
-      <mat-option *ngFor="let complain of ComplainType" [value]="complain">
-        {{ complain | titlecase }}
-      </mat-option>
-    </mat-select>
-  </mat-form-field> -->
   <p-dropdown
     [options]="ComplainType"
     [(ngModel)]="selectedComplain"
