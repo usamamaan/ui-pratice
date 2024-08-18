@@ -13,6 +13,13 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ButtonModule } from 'primeng/button';
+import { CommonModule } from '@angular/common';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { DropdownModule } from 'primeng/dropdown';
+import { CalendarModule } from 'primeng/calendar';
+import { TableModule } from 'primeng/table';
+import { MultiSelectModule } from 'primeng/multiselect';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +30,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReportComponent,
   ],
   imports: [
+    MultiSelectModule,
+    TableModule,
+    CalendarModule,
+    DropdownModule,
+    ButtonModule,
+    InputTextareaModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -30,7 +43,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatButtonModule,
     MatSelectModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
