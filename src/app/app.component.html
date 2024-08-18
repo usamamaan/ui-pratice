@@ -1,1 +1,14 @@
-<h1>hello word</h1>
+<div class="container-md border bg-black text-light">
+  <nav>
+    <ul class="d-flex gap-4 text-decoration-none text-capitalize">
+      <li><a routerLink="/">home</a></li>
+      <li><a routerLink="/about">about</a></li>
+      <li><a routerLink="/help">help</a></li>
+      <li><a routerLink="/register">register</a></li>
+      <li><a routerLink="/report">reports</a></li>
+    </ul>
+  </nav>
+</div>
+<div class="main">
+  <router-outlet></router-outlet>
+</div>
