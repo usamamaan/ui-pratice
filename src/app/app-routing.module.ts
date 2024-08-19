@@ -1,31 +1,48 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { HelpComponent } from './help/help.component';
-import { RegistrationComponent } from './registration/registration.component';
-import { ReportComponent } from './report/report.component';
+import { HomeComponent } from './main/home/home.component';
+import { AboutComponent } from './main/about/about.component';
+import { HelpComponent } from './main/help/help.component';
+import { RegistrationComponent } from './main/registration/registration.component';
+import { ReportComponent } from './main/report/report.component';
+import { LoginComponent } from './auth/login/login.component';
+import { UserRegistrationComponent } from './auth/user-registration/user-registration.component';
+import { MainComponent } from './main/main.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    component: MainComponent,
+    children: [
+      {
+        path: 'about',
+        component: AboutComponent,
+      },
+      {
+        path: 'help',
+        component: HelpComponent,
+      },
+      {
+        path: 'register',
+        component: RegistrationComponent,
+      },
+      {
+        path: 'report',
+        component: ReportComponent,
+      },
+    ],
   },
   {
-    path: 'about',
-    component: AboutComponent,
+    path: 'login',
+    component: LoginComponent,
   },
   {
-    path: 'help',
-    component: HelpComponent,
+    path: 'login',
+    component: UserRegistrationComponent,
   },
   {
-    path: 'register',
-    component: RegistrationComponent,
-  },
-  {
-    path: 'report',
-    component: ReportComponent,
+    path: '**',
+    component: MainComponent,
   },
 ];
 
